@@ -1,5 +1,5 @@
-const babylon = require('babylon')
-const traverse = require('babel-traverse').default
+const babylon = require('@babel/parser')
+const traverse = require('@babel/traverse').default
 
 const fs = require('fs')
 
@@ -33,7 +33,7 @@ module.exports = (file) => {
   const text = fs.readFileSync(file, 'utf8')
   const ast = babylon.parse(text, {
     sourceType: 'module',
-    plugins: ['jsx', 'flow', 'objectRestSpread', 'classProperties'],
+    plugins: ['jsx', 'typescript', 'objectRestSpread', 'classProperties'],
   })
   const lines = text.split('\n')
 
