@@ -33,7 +33,7 @@ module.exports = (file) => {
   const text = fs.readFileSync(file, 'utf8')
   const ast = babylon.parse(text, {
     sourceType: 'module',
-    plugins: ['jsx', 'typescript', 'objectRestSpread', 'classProperties', 'dynamicImport'],
+    plugins: ['jsx', 'typescript', 'objectRestSpread', 'classProperties', 'dynamicImport', 'optionalChaining'],
   })
   const lines = text.split('\n')
 
