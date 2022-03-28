@@ -33,7 +33,7 @@ module.exports = (file) => {
   const text = fs.readFileSync(file, 'utf8')
   const ast = parser.parse(text, {
     sourceType: 'module',
-    plugins: ['jsx', 'flow', 'typescript', 'objectRestSpread', 'classProperties', 'dynamicImport', 'optionalChaining', 'nullishCoalescingOperator'],
+    plugins: ['jsx', 'typescript', 'objectRestSpread', 'classProperties', 'dynamicImport', 'optionalChaining', 'nullishCoalescingOperator'],
   })
   const lines = text.split('\n')
 
